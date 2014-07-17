@@ -1,0 +1,117 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.debitoor.com/api/v1.0/sales/invoices/53c7d396382923ad09390622
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Token:
+      - <%= ENV["DEBITOOR_ACCESS_TOKEN"] %>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Revision:
+      - '2014-07-17T11:58:58.756Z'
+      Vary:
+      - Accept-Encoding
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Access-Control-Expose-Headers:
+      - x-token,x-requested-with,x-credentials
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, max-age=0
+      Expires:
+      - Sat, 26 Jul 1997 05:00:00 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1397'
+      Etag:
+      - ! '"349607812"'
+      Date:
+      - Thu, 17 Jul 2014 15:17:20 GMT
+      Connection:
+      - close
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZGRpdGlvbmFsTm90ZXMiOiJTZWNvbmQgbm90ZSIsImNvbXBhbnlQcm9m
+        aWxlIjp7ImFjY291bnRIb2xkZXJOYW1lIjoiQkxPT01ZIERBWVMgR21iSCIs
+        ImFkZHJlc3MiOiJTdGVpbnN0cmFzc2UgM1xuMTAxMTkgQmVybGluIiwiYmFu
+        a05hbWUiOiJCZXJsaW5lciBCYW5rLCBEZXV0c2NoZSBCYW5rIEFHICIsImNh
+        c2hBY2NvdW50aW5nIjpmYWxzZSwiY2VvIjoiRnJhbnppc2thIEdyw6RmaW4g
+        di4gSGFyZGVuYmVyZyIsImNvbW1lcmNpYWxSZWdpc3RlciI6IkhSQiAxNDA4
+        NzIiLCJkaXN0cmljdENvdXJ0IjoiQ2hhcmxvdHRlbmJ1cmciLCJlbWFpbCI6
+        ImF1c2dhbmdzcmVjaG51bmdlbkBibG9vbXlkYXlzLmRlIiwiZXVWYXROdW1i
+        ZXIiOiJERTI4MjE5NjQzNiIsImliYW5Db2RlIjoiREUzMiAxMDA3IDA4NDgg
+        MDYzNCAzMjU1IDAxIiwibmFtZSI6IkJMT09NWSBEQVlTIEdtYkgiLCJzd2lm
+        dENvZGUiOiJERVVUREVEQjExMCIsInRheEVuYWJsZWQiOnRydWUsInRlbGVw
+        aG9uZU51bWJlciI6IjAzMCA5MTUwMTE5MSIsIndlYlNpdGUiOiJ3d3cuYmxv
+        b215ZGF5cy5jb20ifSwiY3VycmVuY3kiOiJFVVIiLCJjdXN0b21lckFkZHJl
+        c3MiOiJMaXR0bGUgaXNsYW5kIG9uIHRoZSBsZWZ0IDMiLCJjdXN0b21lckNv
+        dW50cnkiOiJERSIsImN1c3RvbWVyQ291bnRyeU5hbWUiOiJEZXV0c2NobGFu
+        ZCIsImN1c3RvbWVyTmFtZSI6Ikd1eWJydXNoIFRocmVlcHdvb2QiLCJkYXRl
+        IjoiMjAxNC0wNy0xNyIsImRpc2NvdW50UmF0ZSI6MCwiZHVlRGF0ZSI6IjIw
+        MTQtMDctMjUiLCJsaW5lcyI6W3sicHJvZHVjdE5hbWUiOiJTdGFuJ3Mgc2hp
+        cCIsInVuaXRHcm9zc1ByaWNlIjo1MDAwLCJxdWFudGl0eSI6MSwidGF4UmF0
+        ZSI6MTksInRheEVuYWJsZWQiOnRydWUsInVuaXROZXRQcmljZSI6NDIwMS42
+        OCwiZ3Jvc3NBbW91bnRCZWZvcmVEaXNjb3VudCI6NTAwMCwibmV0QW1vdW50
+        Ijo0MjAxLjY4LCJncm9zc0Ftb3VudCI6NTAwMCwidGF4QW1vdW50Ijo3OTgu
+        MzJ9XSwibm90ZXMiOiJGaXJzdCBub3RlIiwibnVtYmVyIjo2MDAwMTEzOCwi
+        cGF5bWVudFRlcm1zSWQiOjEsInByaWNlRGlzcGxheVR5cGUiOiJncm9zcyIs
+        InNlbnQiOmZhbHNlLCJ0YXhHcm91cHMiOlt7InRheFJhdGUiOjE5LCJuZXRB
+        bW91bnQiOjQyMDEuNjgsInRheEFtb3VudCI6Nzk4LjMyfV0sInRvdGFsR3Jv
+        c3NBbW91bnQiOjUwMDAsInRvdGFsTmV0QW1vdW50Ijo0MjAxLjY4LCJ0b3Rh
+        bE5ldEFtb3VudEJlZm9yZURpc2NvdW50Ijo0MjAxLjY4LCJ0b3RhbE5ldERp
+        c2NvdW50QW1vdW50IjowLCJ0b3RhbFRheEFtb3VudCI6Nzk4LjMyLCJ2aWV3
+        ZWQiOmZhbHNlLCJpZCI6IjUzYzdkMzk2MzgyOTIzYWQwOTM5MDYyMiIsInR5
+        cGUiOiJpbnZvaWNlIiwidW5wYWlkQW1vdW50Ijo1MDAwLCJwYWlkIjpmYWxz
+        ZX0=
+    http_version: 
+  recorded_at: Thu, 17 Jul 2014 15:17:24 GMT
+- request:
+    method: post
+    uri: https://api.debitoor.com/api/v1.0/sales/invoices/53c7d396382923ad09390622/email
+    body:
+      encoding: UTF-8
+      string: ! '{"recipient":"kontakt@enricogenauck.de","subject":"Your new invoice
+        $[NUMBER]","message":"Hi there\nplease pay.","attachmentName":"Rechnung $[NUMBER]
+        - BLOOMY DAYS GmbH.pdf","attachPdf":true}'
+    headers:
+      X-Token:
+      - <%= ENV["DEBITOOR_ACCESS_TOKEN"] %>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Revision:
+      - '2014-07-17T11:58:58.756Z'
+      Vary:
+      - Accept-Encoding
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Access-Control-Expose-Headers:
+      - x-token,x-requested-with,x-credentials
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, max-age=0
+      Expires:
+      - Sat, 26 Jul 1997 05:00:00 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '16'
+      Date:
+      - Thu, 17 Jul 2014 15:31:18 GMT
+      Connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! '{"success":true}'
+    http_version: 
+  recorded_at: Thu, 17 Jul 2014 15:31:22 GMT
+recorded_with: VCR 2.9.2

@@ -1,0 +1,91 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.debitoor.com/api/v1.0/sales/paymentterms
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Token:
+      - <%= ENV["DEBITOOR_ACCESS_TOKEN"] %>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Revision:
+      - '2014-07-15T09:39:01.080Z'
+      Vary:
+      - Accept-Encoding
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Access-Control-Expose-Headers:
+      - x-token,x-requested-with,x-credentials
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, max-age=0
+      Expires:
+      - Sat, 26 Jul 1997 05:00:00 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '499'
+      Date:
+      - Tue, 15 Jul 2014 11:39:15 GMT
+      Connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! '[{"id":1,"type":"Net","days":8,"name":"8 Tage"},{"id":2,"type":"Paid
+        in cash","days":0,"name":"Barzahlung"},{"id":3,"type":"Net","days":14,"name":"14
+        Tage"},{"id":4,"type":"Net","days":30,"name":"30 Tage"},{"id":5,"type":"Custom
+        days from invoice date","name":"[NUMBER_OF_DAYS] Tage","shortName":"Rechnungsdatum"},{"id":6,"type":"Custom
+        days from month end","name":"Aktueller Monat + [NUMBER_OF_DAYS] Tage","shortName":"Aktueller
+        Monat"},{"id":7,"type":"Fixed due date","name":"Manuell einrichten"}]'
+    http_version: 
+  recorded_at: Tue, 15 Jul 2014 11:39:15 GMT
+- request:
+    method: get
+    uri: https://api.debitoor.com/api/v1.0/sales/paymentterms
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Token:
+      - <%= ENV["DEBITOOR_ACCESS_TOKEN"] %>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Revision:
+      - '2014-07-15T09:39:01.080Z'
+      Vary:
+      - Accept-Encoding
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Access-Control-Expose-Headers:
+      - x-token,x-requested-with,x-credentials
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, max-age=0
+      Expires:
+      - Sat, 26 Jul 1997 05:00:00 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '499'
+      Date:
+      - Tue, 15 Jul 2014 11:39:15 GMT
+      Connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! '[{"id":1,"type":"Net","days":8,"name":"8 Tage"},{"id":2,"type":"Paid
+        in cash","days":0,"name":"Barzahlung"},{"id":3,"type":"Net","days":14,"name":"14
+        Tage"},{"id":4,"type":"Net","days":30,"name":"30 Tage"},{"id":5,"type":"Custom
+        days from invoice date","name":"[NUMBER_OF_DAYS] Tage","shortName":"Rechnungsdatum"},{"id":6,"type":"Custom
+        days from month end","name":"Aktueller Monat + [NUMBER_OF_DAYS] Tage","shortName":"Aktueller
+        Monat"},{"id":7,"type":"Fixed due date","name":"Manuell einrichten"}]'
+    http_version: 
+  recorded_at: Tue, 15 Jul 2014 11:39:15 GMT
+recorded_with: VCR 2.9.2
