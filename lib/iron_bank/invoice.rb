@@ -4,9 +4,13 @@ module IronBank
 
   class Invoice < IronBank::Base
 
-    def initialize(api, invoice_id = nil)
+    def initialize(api, invoice_id = nil, attributes = nil)
       @api        = api
       @attributes = {}
+
+      if attributes
+        @attributes = attributes
+      end
 
       if invoice_id
         response = self.class.get(
@@ -36,6 +40,22 @@ module IronBank
       end
 
       self
+    end
+
+    def pdf
+      raise BaseError.new("invoice.id missing") unless self.id
+
+      response = self.class.get(
+          "/sales/invoices/#{self.id}/pdf",
+          headers: @api.authorization_headers
+      )
+      if response.code == 200
+        downloaded_pdf = response.response
+      else
+        raise RequestError.new(response)
+      end
+
+      downloaded_pdf
     end
 
     def method_missing(m, *args, &block)
