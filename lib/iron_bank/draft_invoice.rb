@@ -51,7 +51,7 @@ module IronBank
         raise RequestError.new(response)
       end
 
-      Invoice.new(@api, attributes = @attributes)
+      Invoice.new(@api, nil, @attributes)
     end
 
     def method_missing(m, *args, &block)

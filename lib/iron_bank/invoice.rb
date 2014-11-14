@@ -50,11 +50,10 @@ module IronBank
           headers: @api.authorization_headers
       )
       if response.code == 200
-        downloaded_pdf = response.response
+        downloaded_pdf = response.parsed_response
       else
         raise RequestError.new(response)
       end
-
       downloaded_pdf
     end
 
