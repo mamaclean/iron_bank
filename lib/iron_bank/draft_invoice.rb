@@ -54,6 +54,22 @@ module IronBank
       @attributes
     end
 
+    def pdf
+      raise BaseError.new("draft_invoice.id missing") unless self.id
+
+      response = self.class.post(
+          "/sales/draftinvoices/#{self.id}/pdf",
+          headers: @api.authorization_headers
+      )
+      if response.code == 200
+        downloaded_pdf = response.response
+      else
+        raise RequestError.new(response)
+      end
+
+      downloaded_pdf
+    end
+
     def method_missing(m, *args, &block)
       if @attributes.has_key?(m.to_s)
         @attributes[m.to_s]
