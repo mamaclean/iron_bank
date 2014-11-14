@@ -57,7 +57,7 @@ module IronBank
     def pdf
       raise BaseError.new("draft_invoice.id missing") unless self.id
 
-      response = self.class.post(
+      response = self.class.get(
           "/sales/draftinvoices/#{self.id}/pdf",
           headers: @api.authorization_headers
       )
