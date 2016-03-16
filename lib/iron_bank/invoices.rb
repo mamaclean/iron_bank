@@ -6,16 +6,27 @@ module IronBank
       @api = api
     end
 
+    def all_from_to(from, to)
+      response = self.class.get(
+          "/sales/invoices?fromDate=#{from}&toDate=#{to}",
+          headers: @api.authorization_headers
+      )
+      build_invoices(response)
+    end
+
     def all
       response = self.class.get(
           '/sales/invoices',
           headers: @api.authorization_headers
       )
+      build_invoices(response)
+    end
 
+    def build_invoices(response)
       if response.code == 200
         raw_invoices = response.parsed_response
         invoices = []
-        raw_invoices.each{ |i|
+        raw_invoices.each { |i|
           invoices << parse_invoice(i)
 
         }
