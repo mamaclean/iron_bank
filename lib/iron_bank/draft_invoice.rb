@@ -10,7 +10,7 @@ module IronBank
 
       if invoice_id
         response = self.class.get(
-          "/sales/draftinvoices/#{invoice_id}",
+          "/sales/draftinvoices/#{invoice_id}/v3",
           headers: @api.authorization_headers
         )
 
@@ -24,7 +24,7 @@ module IronBank
 
     def create(options = {})
       response = self.class.post(
-        '/sales/draftinvoices',
+        '/sales/draftinvoices/v3',
         body: options.camelize_keys!.to_json,
         headers: @api.authorization_headers
       )
@@ -42,7 +42,7 @@ module IronBank
       raise BaseError.new("draft_invoice.id missing") unless self.id
 
       response = self.class.post(
-        "/sales/draftinvoices/#{self.id}/book",
+        "/sales/draftinvoices/#{self.id}/book/v3",
         headers: @api.authorization_headers
       )
       if response.code == 200

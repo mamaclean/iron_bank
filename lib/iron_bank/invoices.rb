@@ -8,7 +8,7 @@ module IronBank
 
     def all_from_to(from, to)
       response = self.class.get(
-          "/sales/invoices?fromDate=#{from}&toDate=#{to}",
+          "/sales/invoices/v3?fromDate=#{from}&toDate=#{to}",
           headers: @api.authorization_headers
       )
       build_invoices(response)
@@ -16,7 +16,7 @@ module IronBank
 
     def all
       response = self.class.get(
-          '/sales/invoices',
+          '/sales/invoices/v3',
           headers: @api.authorization_headers
       )
       build_invoices(response)

@@ -3,7 +3,7 @@ module IronBank
   class Base
     include HTTParty
 
-    base_uri "https://api.debitoor.com/api/v1.0"
+    base_uri "https://api.debitoor.com/api"
   end
 
   class RequestError < StandardError; end

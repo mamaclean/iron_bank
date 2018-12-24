@@ -7,7 +7,7 @@ module IronBank
     end
 
     def all
-      response = self.class.get('/sales/paymentterms', headers: @api.authorization_headers)
+      response = self.class.get('/sales/paymentterms/v1', headers: @api.authorization_headers)
       response.parsed_response
     end
 

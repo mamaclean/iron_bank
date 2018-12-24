@@ -14,7 +14,7 @@ module IronBank
 
       if invoice_id
         response = self.class.get(
-          "/sales/invoices/#{invoice_id}",
+          "/sales/invoices/#{invoice_id}/v3",
           headers: @api.authorization_headers
         )
 
@@ -30,7 +30,7 @@ module IronBank
       raise BaseError.new("invoice.id missing") unless self.id
 
       response = self.class.post(
-        "/sales/invoices/#{self.id}/email",
+        "/sales/invoices/#{self.id}/email/v2",
         body: options.camelize_keys!.to_json,
         headers: @api.authorization_headers
       )
@@ -42,11 +42,28 @@ module IronBank
       self
     end
 
+    def send_electronic_invoice(options = {})
+      raise BaseError.new("invoice.id missing") unless self.id
+
+      response = self.class.post(
+          "/sales/invoices/#{self.id}/xml/send/v1",
+          body: options.camelize_keys!.to_json,
+          headers: @api.authorization_headers
+      )
+
+      if response.code == 200
+        sdi_receipt = response.parsed_response
+      else
+        raise RequestError.new(response)
+      end
+      sdi_receipt
+    end
+
     def pdf
       raise BaseError.new("invoice.id missing") unless self.id
 
       response = self.class.get(
-          "/sales/invoices/#{self.id}/pdf",
+          "/sales/invoices/#{self.id}/pdf/v1",
           headers: @api.authorization_headers
       )
       if response.code == 200
