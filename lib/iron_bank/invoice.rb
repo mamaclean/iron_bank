@@ -60,18 +60,30 @@ module IronBank
     end
 
     def pdf
+      download_invoice("/sales/invoices/#{self.id}/pdf/v1")
+    end
+
+    def einvoice_xml
+      download_invoice("/sales/invoices/#{self.id}/xml/v1")
+    end
+
+    def einvoice_pdf
+      download_invoice("/sales/invoices/#{self.id}/xml/pdf/v1")
+    end
+
+    def download_invoice(path)
       raise BaseError.new("invoice.id missing") unless self.id
 
       response = self.class.get(
-          "/sales/invoices/#{self.id}/pdf/v1",
+          path,
           headers: @api.authorization_headers
       )
       if response.code == 200
-        downloaded_pdf = response.parsed_response
+        downloaded_content = response.parsed_response
       else
         raise RequestError.new(response)
       end
-      downloaded_pdf
+      downloaded_content
     end
 
     def method_missing(m, *args, &block)
