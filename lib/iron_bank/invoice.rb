@@ -26,6 +26,19 @@ module IronBank
       end
     end
 
+    def save
+      if invoice_id
+        response = self.class.put(
+            "/sales/invoices/#{invoice_id}/v3",
+            headers: @api.authorization_headers,
+            body: @attributes.to_json
+        )
+        if response.code != 200
+          raise RequestError.new(response)
+        end
+      end
+    end
+
     def deliver(options = {})
       raise BaseError.new("invoice.id missing") unless self.id
 
