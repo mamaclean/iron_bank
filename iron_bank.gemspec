@@ -16,9 +16,5 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'activesupport'
 
   s.add_development_dependency 'bundler', '2.0.1'
-  s.add_development_dependency 'turn'
   s.add_development_dependency 'rake'
-  s.add_development_dependency 'vcr'
-  s.add_development_dependency 'webmock'
-  s.add_development_dependency 'dotenv'
 end
