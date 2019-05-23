@@ -14,7 +14,7 @@ module IronBank
 
       if invoice_id
         response = self.class.get(
-          "/sales/invoices/#{invoice_id}/v3",
+          "/sales/invoices/#{invoice_id}/v4",
           headers: @api.authorization_headers
         )
 
@@ -29,7 +29,7 @@ module IronBank
     def save
       raise BaseError.new("invoice.id missing") unless self.id
       response = self.class.put(
-          "/sales/invoices/#{self.id}/v3",
+          "/sales/invoices/#{self.id}/v4",
           headers: @api.authorization_headers,
           body: @attributes.to_json
       )

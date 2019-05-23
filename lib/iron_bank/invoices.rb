@@ -6,17 +6,41 @@ module IronBank
       @api = api
     end
 
-    def all_from_to(from, to)
+    def from(from)
+      @from = from
+      self
+    end
+
+    def to(to)
+      @to = to
+      self
+    end
+
+    def electronic_status(electronic_status)
+      @electronic_status = electronic_status
+      self
+    end
+
+    def retrieve
+      url = '/sales/invoices/v4'
+      querystring = ''
+      querystring += "&fromDate=#{@from}" unless @from.nil?
+      querystring += "&toDate=#{@to}" unless @to.nil?
+      querystring += "&einvoiceStatus=#{@electronic_status}" unless @electronic_status.nil?
       response = self.class.get(
-          "/sales/invoices/v3?fromDate=#{from}&toDate=#{to}",
+          "#{url}?#{querystring}",
           headers: @api.authorization_headers
       )
       build_invoices(response)
     end
 
+    def all_from_to(from, to)
+      from(from).to(to).retrieve
+    end
+
     def all
       response = self.class.get(
-          '/sales/invoices/v3',
+          '/sales/invoices/v4',
           headers: @api.authorization_headers
       )
       build_invoices(response)

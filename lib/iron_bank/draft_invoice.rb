@@ -24,7 +24,7 @@ module IronBank
 
     def create(options = {})
       response = self.class.post(
-        '/sales/draftinvoices/v3',
+        '/sales/draftinvoices/v4',
         body: options.camelize_keys!.to_json,
         headers: @api.authorization_headers
       )
@@ -42,7 +42,7 @@ module IronBank
       raise BaseError.new("draft_invoice.id missing") unless self.id
 
       response = self.class.post(
-        "/sales/draftinvoices/#{self.id}/book/v3",
+        "/sales/draftinvoices/#{self.id}/book/v4",
         headers: @api.authorization_headers
       )
       if response.code == 200
