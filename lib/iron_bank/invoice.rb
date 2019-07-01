@@ -30,7 +30,7 @@ module IronBank
       raise BaseError.new("invoice.id missing") unless self.id
       response = self.class.put(
           "/sales/invoices/#{self.id}/v4",
-          headers: @api.authorization_headers,
+          headers: @api.authorization_headers.merge({"Content-Type" => "application/json"}),
           body: @attributes.to_json
       )
       if response.code != 200
@@ -44,7 +44,7 @@ module IronBank
       response = self.class.post(
         "/sales/invoices/#{self.id}/email/v2",
         body: options.camelize_keys!.to_json,
-        headers: @api.authorization_headers
+        headers: @api.authorization_headers.merge({"Content-Type" => "application/json"})
       )
 
       if response.code != 200
@@ -60,7 +60,7 @@ module IronBank
       response = self.class.post(
           "/sales/invoices/#{self.id}/xml/send/v1",
           body: options.camelize_keys!.to_json,
-          headers: @api.authorization_headers
+          headers: @api.authorization_headers.merge({"Content-Type" => "application/json"})
       )
 
       if response.code == 200

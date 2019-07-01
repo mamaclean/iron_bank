@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    iron_bank (0.0.1)
+    iron_bank (0.0.2)
       activesupport
       httparty
       oauth2
@@ -22,7 +22,7 @@ GEM
       multi_xml (>= 0.5.2)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
-    jwt (2.1.0)
+    jwt (2.2.1)
     mime-types (3.2.2)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2019.0331)

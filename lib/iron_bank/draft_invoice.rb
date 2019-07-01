@@ -26,7 +26,7 @@ module IronBank
       response = self.class.post(
         '/sales/draftinvoices/v4',
         body: options.camelize_keys!.to_json,
-        headers: @api.authorization_headers
+        headers: @api.authorization_headers.merge({"Content-Type" => "application/json"})
       )
 
       if response.code == 200
@@ -43,7 +43,7 @@ module IronBank
 
       response = self.class.post(
         "/sales/draftinvoices/#{self.id}/book/v4",
-        headers: @api.authorization_headers
+        headers: @api.authorization_headers.merge({"Content-Type" => "application/json"})
       )
       if response.code == 200
         @attributes = response.parsed_response
