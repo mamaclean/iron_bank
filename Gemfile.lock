@@ -37,7 +37,7 @@ GEM
       multi_xml (~> 0.5)
       rack (>= 1.2, < 3)
     rack (2.0.7)
-    rake (12.3.2)
+    rake (12.3.3)
     thread_safe (0.3.6)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
